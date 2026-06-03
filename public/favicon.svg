@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Flower Shop favicon</title>
+  <rect width="64" height="64" rx="18" fill="#fff8fc"/>
+  <path fill="#9fcfe4" d="M23 39c-8-7-10-17-5-29 8 6 11 16 5 29Zm18 0c8-7 10-17 5-29-8 6-11 16-5 29Z"/>
+  <circle cx="25" cy="27" r="10" fill="#ffd6e8"/>
+  <circle cx="39" cy="27" r="10" fill="#ccecff"/>
+  <circle cx="32" cy="36" r="12" fill="#e85f9f"/>
+  <circle cx="32" cy="32" r="6" fill="#ffffff"/>
+  <path fill="#d8a7c7" d="M21 45h22l-4 12H25l-4-12Z"/>
+</svg>
