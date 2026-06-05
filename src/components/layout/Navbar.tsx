@@ -48,11 +48,6 @@ export function Navbar() {
         </span>
         <span>Flower</span> Shop
       </Link>
-      <button className="menu-button" type="button" aria-label="Toggle navigation menu" onClick={() => setIsOpen((value) => !value)}>
-        <span />
-        <span />
-        <span />
-      </button>
       <nav className={`nav-panel ${isOpen ? 'is-open' : ''}`} aria-label="Primary navigation">
         <div className="nav-links">
           {navLinks.map((link) => (
@@ -77,23 +72,30 @@ export function Navbar() {
           >
             Login
           </Button>
-          <Button
-            to="/cart"
-            data-cart-target="true"
-            className={`cart-icon-button ${location.pathname === '/cart' ? 'is-active' : ''}`}
-            aria-current={location.pathname === '/cart' ? 'page' : undefined}
-            aria-label={`Cart with ${itemCount} items`}
-            onClick={() => setIsOpen(false)}
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M7 8h13l-1.4 7.2a2 2 0 0 1-2 1.6H9.1a2 2 0 0 1-2-1.7L5.8 5.8H3" />
-              <circle cx="9.5" cy="20" r="1.2" />
-              <circle cx="17" cy="20" r="1.2" />
-            </svg>
-            {itemCount > 0 && <span>{itemCount}</span>}
-          </Button>
         </div>
       </nav>
+      <div className="header-actions">
+        <Button
+          to="/cart"
+          data-cart-target="true"
+          className={`cart-icon-button ${location.pathname === '/cart' ? 'is-active' : ''}`}
+          aria-current={location.pathname === '/cart' ? 'page' : undefined}
+          aria-label={`Cart with ${itemCount} items`}
+          onClick={() => setIsOpen(false)}
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 8h13l-1.4 7.2a2 2 0 0 1-2 1.6H9.1a2 2 0 0 1-2-1.7L5.8 5.8H3" />
+            <circle cx="9.5" cy="20" r="1.2" />
+            <circle cx="17" cy="20" r="1.2" />
+          </svg>
+          {itemCount > 0 && <span>{itemCount}</span>}
+        </Button>
+        <button className="menu-button" type="button" aria-label="Toggle navigation menu" onClick={() => setIsOpen((value) => !value)}>
+          <span />
+          <span />
+          <span />
+        </button>
+      </div>
     </header>
   )
 }

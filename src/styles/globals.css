@@ -6,6 +6,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--header-clearance);
 }
 
 body {
@@ -95,7 +96,17 @@ main {
 }
 
 .page {
-  padding-top: 8rem;
+  padding-top: var(--page-top-space);
+}
+
+.cart-page,
+.contact-page,
+.product-detail {
+  padding-top: var(--page-top-space);
+}
+
+[id] {
+  scroll-margin-top: var(--header-clearance);
 }
 
 .eyebrow,
@@ -198,7 +209,7 @@ main {
   align-items: center;
   justify-content: space-between;
   gap: var(--space-4);
-  margin: 1rem auto -4.85rem;
+  margin: 1rem auto 0;
   border: 1px solid rgba(255, 255, 255, 0.72);
   border-radius: 999px;
   background: rgba(255, 248, 252, 0.82);
@@ -257,7 +268,8 @@ main {
 
 .nav-panel,
 .nav-links,
-.nav-actions {
+.nav-actions,
+.header-actions {
   display: flex;
   align-items: center;
   gap: var(--space-3);
@@ -313,7 +325,7 @@ main {
   color: var(--color-deep-rose);
 }
 
-.nav-actions .cart-icon-button {
+.header-actions .cart-icon-button {
   position: relative;
   width: 2.8rem;
   min-width: 2.8rem;
@@ -323,7 +335,7 @@ main {
   padding: 0;
 }
 
-.nav-actions .cart-icon-button.is-active {
+.header-actions .cart-icon-button.is-active {
   background: linear-gradient(135deg, var(--color-rose), #86cdeb);
   box-shadow: 0 14px 32px rgba(232, 95, 159, 0.24);
 }
@@ -398,7 +410,7 @@ main {
   align-items: center;
   gap: var(--space-7);
   min-height: 760px;
-  padding-top: 8rem;
+  padding-top: var(--page-top-space);
 }
 
 .hero__copy {
@@ -1426,7 +1438,7 @@ select:focus {
 }
 
 .product-detail {
-  padding-top: 8rem;
+  padding-top: var(--page-top-space);
 }
 
 .product-detail__media img {
@@ -1716,7 +1728,7 @@ select:focus {
   display: grid;
   min-height: 86vh;
   place-items: center;
-  padding: 8rem 1rem 4rem;
+  padding: var(--page-top-space) 1rem 4rem;
 }
 
 .auth-shell {
@@ -2241,8 +2253,14 @@ select:focus {
 }
 
 @media (max-width: 820px) {
+  html {
+    scroll-padding-top: var(--mobile-header-clearance);
+  }
+
   .navbar {
+    gap: var(--space-3);
     border-radius: var(--radius-md);
+    padding: 0.6rem;
   }
 
   .occasion-grid {
@@ -2251,6 +2269,7 @@ select:focus {
 
   .menu-button {
     display: block;
+    flex: 0 0 auto;
   }
 
   .nav-panel {
@@ -2280,13 +2299,25 @@ select:focus {
     text-align: left;
   }
 
-  .nav-actions .cart-icon-button {
-    justify-content: center;
-    width: 2.8rem;
+  .header-actions {
+    margin-left: auto;
+    gap: var(--space-2);
+  }
+
+  .page,
+  .cart-page,
+  .contact-page,
+  .product-detail {
+    padding-top: var(--mobile-page-top-space);
+  }
+
+  [id] {
+    scroll-margin-top: var(--mobile-header-clearance);
   }
 
   .hero {
     min-height: auto;
+    padding-top: var(--mobile-page-top-space);
   }
 
   .newsletter form {
